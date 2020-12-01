@@ -1,0 +1,51 @@
+*{
+	padding: 0;
+	margin:0;
+	overflow: hidden;
+}
+
+
+#game{
+	width: 100%;
+	height: 190px;	
+	margin-top: 80px;
+	
+}
+
+#character{
+	width: 39px;
+	height: 40px;
+	position: relative;
+	top: 150px;
+	background-image: url(108-1085324_chrome-dinosaur-png-t-rex-google-png-transparent.png);
+	background-size: 50px 50px;
+}
+   .animate{
+   	animation: jump 0.3s linear;
+		
+}
+
+@keyframes jump {
+	0%{top: 150px;}
+	30%{top: 100px;}
+	70%{top: 100px;}
+	100%{top: 150px;}
+
+}
+
+
+#block{
+	width: 20px;
+	height: 20px;
+	background-color: yellow;
+	position: relative;
+	top: 130px;
+	left: 1500px;
+	animation: block 1s infinite linear;
+}
+
+
+@keyframes block{
+	0%{left:480 px;}
+	100%{left: -200px;}
+}
