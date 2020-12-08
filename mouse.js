@@ -2,6 +2,7 @@
  var character=document.getElementById("character");
 var block=document.getElementById("block");
 var c=0;
+var flag=0;
 var highest={};
 document.cookie="hyy=" + 123;
 
@@ -23,9 +24,13 @@ function jump(){
 	if(character.classList!="animate"){
 		character.classList.add("animate");
           }
-          	c++;
-		
+         if(flag ==0){
+         	c++;
 		document.getElementById("s1").innerHTML=c;
+
+
+         }
+          	
 		if(c>highscore){
 			highscore=c;
           document.getElementById("s2").innerHTML=highscore; }
@@ -46,8 +51,12 @@ if(blockLeft<20 && blockLeft>0 && characterTop>=130){
 	block.style.animation="none";
 	block.style.display="none";
 	alert("Game Over, Score: "+c);
+	flag=1;
 	document.cookie="topscore=" +highscore;
-	c = 0;
-//indow.location.reload();
+	document.removeEventListener("keydown",jump());
+	console.log(document.cookie);
+
+	
+
 }
 },10);
